@@ -1,0 +1,7 @@
+# Objectives
+
+To understand the concept of a linked list in C++.
+To store bank account details dynamically.
+To search for a bank account using its account number.
+To display account details when a matching account is found.
+To understand the practical application of data structures in banking systems.
