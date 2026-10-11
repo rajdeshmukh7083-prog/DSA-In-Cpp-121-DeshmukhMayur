@@ -1,0 +1,6 @@
+# Problem Statement
+
+The Bank Account Search System is a simple application developed using a linked list in C++. 
+It stores bank account details, such as account number, account holder's name, and account balance. 
+The system allows users to search for a specific bank account using its account number 
+and display the account details if the account is found.
