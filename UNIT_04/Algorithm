@@ -1,0 +1,21 @@
+# Algorithm
+
+Step 1: Start the program.
+Step 2: Define a structure named BankAccount containing account number, account holder's name, account balance, and a pointer to the next node.
+Step 3: Create a linked list to store bank account details.
+Step 4: Display the menu with the following options:
+Add Bank Account
+Display All Accounts
+Search Bank Account
+Exit
+Step 5: Accept the user's choice.
+Step 6: If the user selects Add Bank Account, input the account details and insert them into the linked list.
+Step 7: If the user selects Display All Accounts, display all stored account details.
+Step 8: If the user selects Search Bank Account:
+Accept the account number.
+Traverse the linked list.
+Compare the entered account number with each stored account number.
+If a match is found, display the account details.
+Otherwise, display "Bank Account Not Found."
+Step 9: If the user selects Exit, terminate the program.
+Step 10: Stop.
