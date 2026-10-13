@@ -1,7 +1,7 @@
 # Objectives
 
-To understand the concept of a linked list in C++.
-To store bank account details dynamically.
-To search for a bank account using its account number.
-To display account details when a matching account is found.
-To understand the practical application of data structures in banking systems.
+To understand the concept of an AVL tree.
+To insert elements into an AVL tree.
+To calculate the balance factor of each node.
+To perform Left-Right (LR) rotation.
+To display the final balanced AVL tree.
