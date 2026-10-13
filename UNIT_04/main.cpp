@@ -1,164 +1,159 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-struct BankAccount {
-    int accountNo;
-    string holderName;
-    float balance;
-    BankAccount* next;
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
+    int height;
 };
 
-BankAccount* head = NULL;
+int height(Node* n)
+{
+    if (n == NULL)
+        return 0;
 
-// Add a new bank account
-void addAccount() {
-    BankAccount* newAccount = new BankAccount;
-
-    cout << "Enter Account Number: ";
-    cin >> newAccount->accountNo;
-
-    // Check for duplicate account numbers
-    BankAccount* temp = head;
-
-    while (temp != NULL) {
-        if (temp->accountNo == newAccount->accountNo) {
-            cout << "Account number already exists!\n";
-            delete newAccount;
-            return;
-        }
-        temp = temp->next;
-    }
-
-    cout << "Enter Account Holder Name: ";
-    getline(cin >> ws, newAccount->holderName);
-
-    cout << "Enter Account Balance: ";
-    cin >> newAccount->balance;
-
-    newAccount->next = NULL;
-
-    if (head == NULL) {
-        head = newAccount;
-    } else {
-        temp = head;
-
-        while (temp->next != NULL) {
-            temp = temp->next;
-        }
-
-        temp->next = newAccount;
-    }
-
-    cout << "Bank Account Added Successfully!\n";
+    return n->height;
 }
 
-// Display all bank accounts
-void displayAccounts() {
-    if (head == NULL) {
-        cout << "No Bank Accounts Available.\n";
-        return;
+int max(int a, int b)
+{
+    return (a > b) ? a : b;
+}
+
+Node* createNode(int value)
+{
+    Node* node = new Node();
+
+    node->data = value;
+    node->left = NULL;
+    node->right = NULL;
+    node->height = 1;
+
+    return node;
+}
+
+int getBalance(Node* n)
+{
+    if (n == NULL)
+        return 0;
+
+    return height(n->left) - height(n->right);
+}
+
+// Right Rotation
+Node* rightRotate(Node* y)
+{
+    Node* x = y->left;
+    Node* T2 = x->right;
+
+    x->right = y;
+    y->left = T2;
+
+    y->height = 1 + max(height(y->left),
+                        height(y->right));
+
+    x->height = 1 + max(height(x->left),
+                        height(x->right));
+
+    return x;
+}
+
+// Left Rotation
+Node* leftRotate(Node* x)
+{
+    Node* y = x->right;
+    Node* T2 = y->left;
+
+    y->left = x;
+    x->right = T2;
+
+    x->height = 1 + max(height(x->left),
+                        height(x->right));
+
+    y->height = 1 + max(height(y->left),
+                        height(y->right));
+
+    return y;
+}
+
+// Insert element into AVL Tree
+Node* insert(Node* node, int value)
+{
+    if (node == NULL)
+        return createNode(value);
+
+    if (value < node->data)
+        node->left = insert(node->left, value);
+
+    else if (value > node->data)
+        node->right = insert(node->right, value);
+
+    else
+        return node;
+
+    node->height = 1 + max(height(node->left),
+                           height(node->right));
+
+    int balance = getBalance(node);
+
+    // Left-Right (LR) Rotation
+    if (balance > 1 &&
+        value > node->left->data)
+    {
+        node->left = leftRotate(node->left);
+        return rightRotate(node);
     }
 
-    BankAccount* temp = head;
+    // Left-Left (LL) Rotation
+    if (balance > 1 &&
+        value < node->left->data)
+    {
+        return rightRotate(node);
+    }
 
-    cout << "\n--- Bank Account Details ---\n";
+    // Right-Right (RR) Rotation
+    if (balance < -1 &&
+        value > node->right->data)
+    {
+        return leftRotate(node);
+    }
 
-    while (temp != NULL) {
-        cout << "Account Number: "
-             << temp->accountNo << endl;
+    // Right-Left (RL) Rotation
+    if (balance < -1 &&
+        value < node->right->data)
+    {
+        node->right = rightRotate(node->right);
+        return leftRotate(node);
+    }
 
-        cout << "Holder Name: "
-             << temp->holderName << endl;
+    return node;
+}
 
-        cout << "Balance: Rs. "
-             << temp->balance << endl;
-
-        cout << "---------------------------\n";
-
-        temp = temp->next;
+// Display tree using inorder traversal
+void inorder(Node* root)
+{
+    if (root != NULL)
+    {
+        inorder(root->left);
+        cout << root->data << " ";
+        inorder(root->right);
     }
 }
 
-// Search a bank account
-void searchAccount() {
-    if (head == NULL) {
-        cout << "No Bank Accounts Available.\n";
-        return;
-    }
+int main()
+{
+    Node* root = NULL;
 
-    int number;
+    root = insert(root, 30);
+    root = insert(root, 10);
+    root = insert(root, 20);
 
-    cout << "Enter Account Number to Search: ";
-    cin >> number;
+    cout << "Balanced AVL Tree (Inorder): ";
+    inorder(root);
 
-    BankAccount* temp = head;
-
-    while (temp != NULL) {
-        if (temp->accountNo == number) {
-            cout << "\nBank Account Found!\n";
-
-            cout << "Account Number: "
-                 << temp->accountNo << endl;
-
-            cout << "Holder Name: "
-                 << temp->holderName << endl;
-
-            cout << "Balance: Rs. "
-                 << temp->balance << endl;
-
-            return;
-        }
-
-        temp = temp->next;
-    }
-
-    cout << "Bank Account Not Found.\n";
-}
-
-// Main function
-int main() {
-    int choice;
-
-    do {
-        cout << "\n===== BANK ACCOUNT SEARCH SYSTEM =====\n";
-        cout << "1. Add Bank Account\n";
-        cout << "2. Display All Accounts\n";
-        cout << "3. Search Bank Account\n";
-        cout << "4. Exit\n";
-
-        cout << "Enter Your Choice: ";
-        cin >> choice;
-
-        switch (choice) {
-            case 1:
-                addAccount();
-                break;
-
-            case 2:
-                displayAccounts();
-                break;
-
-            case 3:
-                searchAccount();
-                break;
-
-            case 4:
-                cout << "Exiting Program...\n";
-                break;
-
-            default:
-                cout << "Invalid Choice! Try Again.\n";
-        }
-
-    } while (choice != 4);
-
-    // Free allocated memory
-    while (head != NULL) {
-        BankAccount* temp = head;
-        head = head->next;
-        delete temp;
-    }
+    cout << "\nRoot Node: " << root->data;
 
     return 0;
 }
