@@ -1,21 +1,13 @@
 # Algorithm
 
-Step 1: Start the program.
-Step 2: Define a structure named BankAccount containing account number, account holder's name, account balance, and a pointer to the next node.
-Step 3: Create a linked list to store bank account details.
-Step 4: Display the menu with the following options:
-Add Bank Account
-Display All Accounts
-Search Bank Account
-Exit
-Step 5: Accept the user's choice.
-Step 6: If the user selects Add Bank Account, input the account details and insert them into the linked list.
-Step 7: If the user selects Display All Accounts, display all stored account details.
-Step 8: If the user selects Search Bank Account:
-Accept the account number.
-Traverse the linked list.
-Compare the entered account number with each stored account number.
-If a match is found, display the account details.
-Otherwise, display "Bank Account Not Found."
-Step 9: If the user selects Exit, terminate the program.
-Step 10: Stop.
+Start the program.
+Create an empty AVL tree.
+Insert the element 30 into the tree.
+Insert the element 10 into the tree.
+Insert the element 20 into the tree.
+Calculate the balance factor of each node.
+Identify the LR imbalance at node 30.
+Perform a left rotation on node 10.
+Perform a right rotation on node 30.
+Display the balanced AVL tree.
+Stop the program.
