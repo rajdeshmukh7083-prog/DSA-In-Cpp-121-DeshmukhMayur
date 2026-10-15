@@ -1,0 +1,4 @@
+Write a C++ program to implement an AVL tree and perform Left-Right (LR) rotation when an imbalance occurs.
+Modify the program to display the two steps of LR rotation separately, 
+show the balance factors of the affected nodes before and after rotation, 
+and allow the user to enter different input sequences that cause an LR imbalance.
