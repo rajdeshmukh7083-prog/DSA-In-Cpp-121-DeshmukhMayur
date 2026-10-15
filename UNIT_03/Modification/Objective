@@ -1,0 +1,6 @@
+To manage bus route information using a Circular Linked List.
+To insert new bus records dynamically.
+To display all available bus routes.
+To search for a bus using its bus number.
+To delete a bus record.
+To understand circular traversal in data structures.
