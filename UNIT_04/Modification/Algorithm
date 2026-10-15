@@ -1,0 +1,14 @@
+Start the program.
+Create an empty AVL tree.
+Accept the number of elements from the user.
+Read the elements and insert them into the AVL tree.
+Calculate the height and balance factor of each node.
+Check whether an LR imbalance occurs.
+If an LR imbalance occurs:
+Perform a left rotation on the left child.
+Display the tree and its balance factors.
+Perform a right rotation on the unbalanced node.
+Display the final balanced tree and its balance factors.
+If another type of imbalance occurs, perform the appropriate AVL rotation.
+Display the final AVL tree and its inorder traversal.
+Stop the program.
