@@ -1,0 +1,10 @@
+Start the program.
+Define a Bus structure containing bus number, source, destination, and a next pointer.
+Initialize the head pointer to NULL.
+Display the menu with options to add, display, search, delete, and exit.
+For Add Bus, create a new node and insert it into the circular linked list.
+For Display Buses, traverse the list until the traversal reaches the first node again.
+For Search Bus, compare the entered bus number with each node.
+For Delete Bus, locate the required node and remove it while maintaining the circular connection.
+Repeat the menu until the user selects Exit.
+Stop the program.
