@@ -1,0 +1,6 @@
+To understand the concept of an AVL tree and its balancing mechanism.
+To detect Left-Right (LR) imbalance during insertion.
+To display the left rotation and right rotation separately.
+To calculate and display the balance factors of the affected nodes.
+To allow user-defined input sequences that cause LR imbalance.
+To display the final balanced AVL tree using inorder traversal.
