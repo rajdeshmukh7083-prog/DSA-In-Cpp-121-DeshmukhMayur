@@ -1,0 +1,4 @@
+To develop a Circular Bus Route Management System that manages bus route information, 
+including bus number, source, and destination, using a Circular Linked List.
+The system allows users to add, display, search, and delete bus routes. 
+The last node points back to the first node, forming a circular structure.
