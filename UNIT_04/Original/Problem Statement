@@ -1,0 +1,4 @@
+# Problem Statement
+
+Write a C++ program to insert the elements 30, 10, and 20 into an AVL tree. Perform the required Left-Right (LR)
+rotation to balance the tree and display the final balanced AVL tree.
