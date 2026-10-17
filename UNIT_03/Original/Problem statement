@@ -1,0 +1,4 @@
+1. Problem Statement
+To develop a Bus Route Management System that stores and manages bus route information such 
+as bus number, source, destination, and stops. The system should allow the user 
+to add, display, search, and delete bus routes efficiently using a data structure.
