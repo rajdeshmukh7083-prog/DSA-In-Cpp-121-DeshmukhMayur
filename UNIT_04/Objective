@@ -1,7 +1,0 @@
-# Objectives
-
-To understand the concept of an AVL tree.
-To insert elements into an AVL tree.
-To calculate the balance factor of each node.
-To perform Left-Right (LR) rotation.
-To display the final balanced AVL tree.
