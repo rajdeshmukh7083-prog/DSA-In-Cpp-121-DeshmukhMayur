@@ -1,0 +1,5 @@
+To represent a maze using a graph data structure.
+To represent junctions as vertices and passages as edges.
+To implement the Breadth-First Search (BFS) algorithm.
+To display the order in which junctions are visited.
+To check whether a path exists between the entrance and the specified exit junction.
