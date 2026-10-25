@@ -1,1 +1,5 @@
 
+A maze can be represented as a graph in which junctions are represented as vertices and passages between junctions are represented as edges.
+The objective is to develop a C++ program that represents a maze using a graph and applies the Breadth-First Search (BFS) algorithm to traverse it.
+The program starts searching from the entrance junction, displays the order in which junctions are visited, and
+determines whether a path exists from the entrance to a user-specified exit junction.
