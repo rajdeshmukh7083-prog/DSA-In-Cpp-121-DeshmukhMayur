@@ -1,0 +1,11 @@
+Step 1: Start the program.
+Step 2: Create a graph using an adjacency list to represent the maze.
+Step 3: Add vertices representing the junctions and edges representing the passages between them.
+Step 4: Take the entrance junction and the desired exit junction as input.
+Step 5: Initialize all junctions as unvisited.
+Step 6: Mark the entrance junction as visited and insert it into the queue.
+Step 7: Remove a junction from the queue and display it.
+Step 8: Visit all its adjacent junctions that have not yet been visited, mark them as visited, and insert them into the queue.
+Step 9: Repeat Steps 7 and 8 until the queue becomes empty.
+Step 10: If the exit junction is visited, display that a path exists; otherwise, display that no path exists.
+Step 11: Stop the program.
