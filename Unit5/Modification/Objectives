@@ -1,1 +1,7 @@
-
+To represent an undirected graph using an adjacency list.
+To accept a different starting vertex from the user.
+To perform BFS traversal and display the traversal order.
+To identify the vertices reachable from the starting vertex.
+To display the vertices that remain unvisited.
+To count the total number of reachable vertices.
+To calculate and display the BFS level of each reachable vertex.
