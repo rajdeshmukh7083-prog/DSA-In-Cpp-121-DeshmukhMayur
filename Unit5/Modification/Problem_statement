@@ -1,1 +1,3 @@
-
+Develop a C++ program to represent a graph using an adjacency list and apply the Breadth-First Search (BFS) algorithm.
+Modify the program to accept a user-defined starting vertex and display the traversal order. The program should also identify the vertices reachable from the starting vertex, display the unvisited vertices, count the reachable vertices, and calculate the BFS level of each reachable vertex.
+This modification helps understand graph traversal, connectivity, and the level-wise exploration of vertices using BFS.
